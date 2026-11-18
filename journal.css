@@ -1,0 +1,31 @@
+:root { --pink: #f6efe3; --paper: #fffbf1; --ink: #403630; --wine: #773f50; }
+body { background-color:var(--pink); background-image:url("assets/grain.png"); }
+.journal-cover { text-align:center; position:relative; padding:54px 18px 75px; overflow:hidden; }
+.address { font:20px var(--hand); color:var(--wine); transform:rotate(-3deg); }
+.journal-cover h1 { margin:8px auto 0; font:400 clamp(48px,6.2vw,89px)/1.1 var(--serif); }
+.journal-cover h1 span { color:#bd7081; }
+.cover-sketch { width:min(460px,92%); margin:8px auto 20px; position:relative; }
+.cover-sketch img { width:100%; height:auto; display:block; }
+.cover-sketch figcaption { color:#805d60; font:19px var(--hand); transform:rotate(-4deg); }
+.journal-cover>p:not(.address) { font-size:15px; }
+.pencil-link { display:inline-block; margin:16px 0 0; padding:9px 6px; border-bottom:1px solid; color:var(--wine); }
+.cover-thread { width:100%; height:65px; position:absolute; bottom:-3px; left:0; fill:none; stroke:#886b64; pointer-events:none; }
+.cover-thread path { stroke-dasharray:1; animation:trace 1.8s ease-out both; }
+@keyframes trace { from { stroke-dashoffset:1; } to { stroke-dashoffset:0; } }
+.note-section { background:#f1dce0 url("assets/grain.png"); max-width:none; padding-inline:max(7vw,calc((100% - 1080px)/2)); }
+.note-section,.night-page,.delhi-section,.closing { clip-path:polygon(0 4px,5% 6px,9% 2px,16% 5px,22% 1px,29% 5px,34% 2px,41% 6px,47% 3px,54% 5px,61% 1px,67% 5px,74% 2px,81% 5px,90% 1px,96% 5px,100% 2px,100% 100%,0 100%); }
+.shared-print { background:#fffdf6; transform:rotate(-3deg); margin:20px 0; box-shadow:1px 4px 12px #70574422; padding:12px 12px 17px; }
+.shared-print img { display:block; width:100%; height:260px; object-fit:cover; object-position:center; }
+.shared-print p { margin:13px 0 6px; font-size:19px; }
+.shared-print small { font-size:10px; color:var(--muted); }
+.memories-section { background:#ededdf url("assets/grain.png"); }
+.night-page { min-height:65vh; position:relative; display:grid; place-items:center; overflow:hidden; background:#252520; color:#f6efe3; text-align:center; padding:80px 20px; }
+.night-page canvas { position:absolute; inset:0; width:100%; height:100%; }
+.night-page div { position:relative; max-width:580px; }
+.night-page h2 { font-size:clamp(50px,7vw,89px); margin:21px auto; }
+.night-page em { color:#ecc3cb; }
+.night-page .handwritten { color:#dfc9bd; font-size:19px; }
+.night-page div>p:last-child { font-size:13px; }
+.delhi-section,.closing,.reason-card { background-image:url("assets/grain.png"); }
+@media(max-width:760px) { .journal-cover { padding-top:35px; } .note-section { padding-inline:24px; } .shared-print { margin-inline:10px; } }
+@media(prefers-reduced-motion:reduce) { .cover-thread path { animation:none; } }
